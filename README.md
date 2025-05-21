@@ -1,73 +1,200 @@
-# Welcome to your Lovable project
+# HR Dashboard
 
-## Project info
+A comprehensive Human Resource Management System built with React and TypeScript, featuring a modern UI and extensive employee management capabilities.
 
-**URL**: https://lovable.dev/projects/f02dee72-5960-46d6-9892-654d329ae226
+## 🚀 Features
 
-## How can I edit this code?
+- **HR Management**
+  - View all employees in a responsive grid layout
+  - Add new employees with detailed information
+  - Search and filter employees by various criteria
+  - Bookmark important employee profiles
+  - View detailed employee information
+  - Track employee performance and ratings
 
-There are several ways of editing your application.
+- **Analytics Dashboard**
+  - Track average employee ratings
+  - Monitor department-wise statistics
+  - Real-time updates on employee data changes
+  - Performance metrics visualization
 
-**Use Lovable**
+- **Modern UI/UX**
+  - Responsive design for all screen sizes
+  - Dark/Light theme support
+  - Beautiful animations and transitions
+  - Intuitive navigation
+  - Toast notifications for user feedback
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f02dee72-5960-46d6-9892-654d329ae226) and start prompting.
+## 🛠️ Technology Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend Framework**: React 18+ with TypeScript
+- **Styling**: Tailwind CSS with shadcn/ui components
+- **State Management**: React Query for server state
+- **Build Tool**: Vite
+- **API Integration**: DummyJSON API
+- **Container Support**: Docker with Nginx
 
-**Use your preferred IDE**
+## 📋 Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js 18+ and npm
+- Docker (optional, for containerization)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🚀 Getting Started
 
-Follow these steps:
+### Local Development
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd hr-dashboard
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at http://localhost:5173
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Docker Development
 
-**Use GitHub Codespaces**
+1. Build the Docker image:
+```bash
+docker build -t hr-dashboard .
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+2. Run the container:
+```bash
+docker run -d -p 8080:80 hr-dashboard
+```
 
-## What technologies are used for this project?
+Visit http://localhost:8080 to access the application.
 
-This project is built with:
+For development with hot-reload:
+```bash
+docker-compose up
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🏗️ Project Structure
 
-## How can I deploy this project?
+```
+hr-dashboard/
+├── src/
+│   ├── components/         # Reusable UI components
+│   │   ├── employee/      # Employee-related components
+│   │   ├── filters/       # Filter components
+│   │   └── ui/           # Base UI components
+│   ├── hooks/            # Custom React hooks
+│   ├── pages/            # Page components
+│   ├── context/          # React context providers
+│   └── App.tsx          # Main application component
+├── public/              # Static assets
+├── docker/             # Docker configuration files
+└── package.json        # Project dependencies
+```
 
-Simply open [Lovable](https://lovable.dev/projects/f02dee72-5960-46d6-9892-654d329ae226) and click on Share -> Publish.
+## 🔧 Configuration
 
-## Can I connect a custom domain to my Lovable project?
+### Environment Variables
 
-Yes, you can!
+Create a `.env` file in the root directory:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```env
+VITE_API_BASE_URL=https://dummyjson.com
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Docker Configuration
+
+The project includes:
+- `Dockerfile` - Multi-stage build for production
+- `docker-compose.yml` - Development setup with hot-reload
+- `nginx.conf` - Nginx configuration for serving the application
+
+## 🌟 Features in Detail
+
+### HR Management
+- **Employee Directory**: Grid layout with employee cards showing key information
+- **Employee Management**: 
+  - Add/Edit employee information
+  - Track employee performance
+  - Manage departments and roles
+- **Search & Filter**: 
+  - Search by name, email, or department
+  - Filter by department, role, or status
+  - Sort by various criteria
+- **Performance Tracking**: Monitor employee ratings and metrics
+
+### Theme Support
+- Light/Dark mode toggle
+- System preference detection
+- Persistent theme selection
+
+## 🔒 Security
+
+- CORS configuration
+- Security headers in Nginx
+- XSS protection
+- Content Security Policy
+- Role-based access control
+
+## 🚀 Deployment
+
+### Vercel Deployment
+
+1. Install Vercel CLI globally:
+```bash
+npm install -g vercel
+```
+
+2. Login to Vercel:
+```bash
+vercel login
+```
+
+3. Deploy to Vercel:
+```bash
+vercel
+```
+
+For production deployment:
+```bash
+vercel --prod
+```
+
+The application will be automatically deployed and you'll receive a production URL.
+
+#### Manual Deployment via Vercel Dashboard
+
+1. Push your code to a Git repository (GitHub, GitLab, or Bitbucket)
+2. Visit [Vercel Dashboard](https://vercel.com/dashboard)
+3. Click "New Project"
+4. Import your repository
+5. Select the repository
+6. Keep the default build settings:
+   - Framework Preset: Vite
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+7. Click "Deploy"
+
+Your application will be automatically built and deployed to Vercel's global network.
+
+### Environment Variables on Vercel
+
+To add environment variables:
+1. Go to your project on Vercel Dashboard
+2. Navigate to Settings > Environment Variables
+3. Add your environment variables:
+   ```
+   VITE_API_BASE_URL=https://dummyjson.com
+   ```
+
+### Production Build
+
+```bash
+npm run build
+```

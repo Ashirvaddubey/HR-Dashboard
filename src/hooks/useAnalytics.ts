@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useEmployees } from './useEmployees';
 import { useBookmarks } from '@/context/BookmarkContext';
@@ -47,13 +46,20 @@ export const useAnalytics = () => {
     setBookmarkTrends(mockTrends);
   }, [employees, bookmarkedEmployees]);
 
+  // Calculate average rating for all employees
+  const overallAverageRating = employees ? 
+    Math.round((employees.reduce((sum, emp) => sum + (emp.performance?.rating || 0), 0) / employees.length) * 10) / 10 : 0;
+
+  // Calculate average rating for bookmarked employees
+  const bookmarkedAverageRating = bookmarkedEmployees.length > 0 ?
+    Math.round((bookmarkedEmployees.reduce((sum, emp) => sum + (emp.performance?.rating || 0), 0) / bookmarkedEmployees.length) * 10) / 10 : 0;
+
   return {
     departmentStats,
     bookmarkTrends,
     isLoading,
     totalEmployees: employees?.length || 0,
     totalBookmarks: bookmarkedEmployees.length,
-    averageRating: employees ? 
-      Math.round((employees.reduce((sum, emp) => sum + (emp.performance?.rating || 0), 0) / employees.length) * 10) / 10 : 0
+    averageRating: bookmarkedEmployees.length > 0 ? bookmarkedAverageRating : overallAverageRating
   };
 };
