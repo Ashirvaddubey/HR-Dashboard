@@ -64,7 +64,7 @@ export function EmployeeFilters({
               <SelectValue placeholder="All Departments" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Departments</SelectItem>
+              <SelectItem value="all">All Departments</SelectItem>
               {departments.map((department) => (
                 <SelectItem key={department} value={department}>
                   {department}
