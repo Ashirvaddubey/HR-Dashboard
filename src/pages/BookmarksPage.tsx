@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useBookmarks } from "@/context/BookmarkContext";
 import { EmployeeCard } from "@/components/employee/EmployeeCard";
@@ -6,11 +5,11 @@ import { useFilteredEmployees } from "@/hooks/useFilteredEmployees";
 import { EmployeeFilters } from "@/components/filters/EmployeeFilters";
 import { Badge } from "@/components/ui/badge";
 import { BookmarkX } from "lucide-react";
-
 export default function BookmarksPage() {
   const { bookmarkedEmployees } = useBookmarks();
   const { filters, setFilters, filteredEmployees, departments } = useFilteredEmployees(bookmarkedEmployees);
 
+  
   return (
     <div className="py-6">
       <div className="mb-6">
