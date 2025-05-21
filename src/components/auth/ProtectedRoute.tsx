@@ -21,7 +21,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
       return;
     }
 
-    // If specific roles are required and user doesn't have permission
+    // if     specific roles are required and user doesn't have permission
     if (allowedRoles.length > 0 && user && !allowedRoles.includes(user.role)) {
       navigate("/unauthorized");
     }
