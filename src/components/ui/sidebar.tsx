@@ -35,7 +35,6 @@ type SidebarContext = {
 }
 
 const SidebarContext = React.createContext<SidebarContext | null>(null)
-
 function useSidebar() {
   const context = React.useContext(SidebarContext)
   if (!context) {
@@ -44,7 +43,6 @@ function useSidebar() {
 
   return context
 }
-
 const SidebarProvider = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> & {
@@ -67,7 +65,6 @@ const SidebarProvider = React.forwardRef<
   ) => {
     const isMobile = useIsMobile()
     const [openMobile, setOpenMobile] = React.useState(false)
-
     // This is the internal state of the sidebar.
     // We use openProp and setOpenProp for control from outside the component.
     const [_open, _setOpen] = React.useState(defaultOpen)
@@ -105,7 +102,6 @@ const SidebarProvider = React.forwardRef<
           toggleSidebar()
         }
       }
-
       window.addEventListener("keydown", handleKeyDown)
       return () => window.removeEventListener("keydown", handleKeyDown)
     }, [toggleSidebar])
