@@ -1,11 +1,11 @@
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { Employee, FilterOptions } from '@/types/employee';
 
 export const useFilteredEmployees = (employees: Employee[] | undefined) => {
   const [filters, setFilters] = useState<FilterOptions>({
     search: '',
-    department: '',
+    department: 'all',
     minRating: 0,
   });
 
@@ -33,7 +33,7 @@ export const useFilteredEmployees = (employees: Employee[] | undefined) => {
         employee.email.toLowerCase().includes(filters.search.toLowerCase());
 
       // Department filter
-      const departmentMatch = filters.department === '' || 
+      const departmentMatch = filters.department === 'all' || 
         employee.company?.department === filters.department;
 
       // Rating filter
