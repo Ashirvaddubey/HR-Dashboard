@@ -1,3 +1,4 @@
+// allows users to see their current location within a hierarchy and navigate to parent levels
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { ChevronRight, MoreHorizontal } from "lucide-react"
