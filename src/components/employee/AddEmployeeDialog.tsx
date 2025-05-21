@@ -45,7 +45,7 @@ export function AddEmployeeDialog() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-
+// post
     try {
       const response = await fetch('https://dummyjson.com/users/add', {
         method: 'POST',
