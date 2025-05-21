@@ -18,14 +18,15 @@ export default function EmployeeDetailPage() {
   const { addBookmark, removeBookmark, isBookmarked } = useBookmarks();
   const [activeTab, setActiveTab] = useState("overview");
 
-  // Mock project data
+  // Mock project data taking manually
+  
   const mockProjects = [
     { id: 1, name: "Website Redesign", role: "Lead Developer", status: "In Progress", completion: 75 },
     { id: 2, name: "CRM Integration", role: "Backend Developer", status: "Completed", completion: 100 },
     { id: 3, name: "Mobile App", role: "UI Designer", status: "Planning", completion: 25 },
   ];
 
-  // Mock feedback data
+  // Mock feedback data taking manually
   const mockFeedback = [
     { 
       id: 1, 
