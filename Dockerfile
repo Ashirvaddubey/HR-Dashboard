@@ -12,7 +12,7 @@ RUN npm ci
 # Copy sC
 COPY . .
 RUN npm run build
-# Stage 2: Production
+# Stage 2: Prod
 FROM nginx:alpine
 
 # Copy built assets from builder stage
