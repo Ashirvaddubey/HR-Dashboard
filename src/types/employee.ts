@@ -1,4 +1,3 @@
-
 export interface Employee {
   id: number;
   firstName: string;
@@ -23,13 +22,11 @@ export interface Employee {
     completionRate: number;
   };
 }
-
 export interface Department {
   name: string;
   employeeCount: number;
   averageRating: number;
 }
-
 export type FilterOptions = {
   search: string;
   department: string;
