@@ -1,10 +1,8 @@
-
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, Legend } from "recharts";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Users, BookmarkCheck, Star } from "lucide-react";
-
 export default function AnalyticsPage() {
   const { 
     departmentStats, 
