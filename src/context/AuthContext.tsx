@@ -25,7 +25,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [user, setUser] = useState<User | null>(null);
   const navigate = useNavigate();
   
-  // Check for saved auth on mount
+  // Check for saved a   auth on mount
   useEffect(() => {
     const savedUser = localStorage.getItem("auth_user");
     if (savedUser) {
@@ -39,7 +39,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
   const login = async (username: string, password: string): Promise<boolean> => {
-    // Simulate API call delay
+    // Simulate API call delay--
     await new Promise(resolve => setTimeout(resolve, 500));
     
     const foundUser = users.find(
