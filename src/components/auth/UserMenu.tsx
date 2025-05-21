@@ -17,7 +17,7 @@ export function UserMenu() {
 
   if (!user) return null;
 
-  // Function to get role icon and color
+  // Function to get role icon and color it with out needs........
   const getRoleDetails = (role: string) => {
     switch (role) {
       case "admin":
