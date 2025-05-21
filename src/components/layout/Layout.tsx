@@ -1,4 +1,4 @@
-
+// Layout page ,contain dark and light mode
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
