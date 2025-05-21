@@ -1,4 +1,4 @@
-
+// App.tsx
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,7 +18,6 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UnauthorizedPage from "./pages/UnauthorizedPage";
 
 const queryClient = new QueryClient();
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
