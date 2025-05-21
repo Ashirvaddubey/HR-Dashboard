@@ -3,11 +3,13 @@ import { useEmployees } from './useEmployees';
 import { useBookmarks } from '@/context/BookmarkContext';
 import { Department } from '@/types/employee';
 
+
 export const useAnalytics = () => {
   const { data: employees, isLoading } = useEmployees();
   const { bookmarkedEmployees } = useBookmarks();
   const [departmentStats, setDepartmentStats] = useState<Department[]>([]);
   const [bookmarkTrends, setBookmarkTrends] = useState<{ name: string; value: number }[]>([]);
+
   
   useEffect(() => {
     if (!employees) return;
