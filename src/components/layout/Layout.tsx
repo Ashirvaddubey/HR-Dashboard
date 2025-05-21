@@ -88,7 +88,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <span className="sr-only">Open sidebar</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="p-0" showClose={false}>
+              <SheetContent side="left" className="p-0">
                 <div className="flex flex-col h-full pt-5">
                   <div className="flex items-center justify-between px-4 mb-6">
                     <h1 className="text-xl font-bold text-primary">HR Dashboard</h1>
