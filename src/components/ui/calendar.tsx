@@ -1,3 +1,6 @@
+// Library Integration:
+// Design System Utilities
+// Icons
 import * as React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { DayPicker } from "react-day-picker";
