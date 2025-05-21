@@ -8,6 +8,7 @@ import { Employee } from "@/types/employee";
 import { useBookmarks } from "@/context/BookmarkContext";
 import { toast } from "sonner";
 import { Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface EmployeeCardProps {
   employee: Employee;
@@ -16,8 +17,10 @@ interface EmployeeCardProps {
 export function EmployeeCard({ employee }: EmployeeCardProps) {
   const { addBookmark, removeBookmark, isBookmarked } = useBookmarks();
   const bookmarked = isBookmarked(employee.id);
+  const navigate = useNavigate();
 
-  const handleBookmarkToggle = () => {
+  const handleBookmarkToggle = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent card click when bookmark button is clicked
     if (bookmarked) {
       removeBookmark(employee.id);
     } else {
@@ -25,8 +28,13 @@ export function EmployeeCard({ employee }: EmployeeCardProps) {
     }
   };
 
-  const handlePromote = () => {
+  const handlePromote = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent card click when promote button is clicked
     toast.success(`${employee.firstName} ${employee.lastName} has been promoted!`);
+  };
+
+  const handleViewDetails = () => {
+    navigate(`/employee/${employee.id}`);
   };
 
   // Determine badge color based on role
@@ -54,7 +62,10 @@ export function EmployeeCard({ employee }: EmployeeCardProps) {
   const roleBadge = getRoleBadge();
 
   return (
-    <Card className="bg-card/30 border-border/30 overflow-hidden hover:border-primary/30 transition-all duration-300">
+    <Card 
+      className="bg-card/30 border-border/30 overflow-hidden hover:border-primary/30 transition-all duration-300 cursor-pointer"
+      onClick={handleViewDetails}
+    >
       <div className="p-5">
         <div className="flex items-start justify-between mb-3">
           <div className="flex items-center">
@@ -107,7 +118,15 @@ export function EmployeeCard({ employee }: EmployeeCardProps) {
         
         <div className="flex justify-between mt-6">
           <div className="flex space-x-2">
-            <Button variant="ghost" size="icon" className="text-blue-500 hover:text-blue-400 hover:bg-blue-950/50">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate(`/employee/${employee.id}`);
+              }}
+              className="text-blue-500 hover:text-blue-400 hover:bg-blue-950/50"
+            >
               <Eye className="h-5 w-5" />
             </Button>
             <Button 
@@ -118,10 +137,20 @@ export function EmployeeCard({ employee }: EmployeeCardProps) {
             >
               {bookmarked ? <BookmarkCheck className="h-5 w-5" /> : <Bookmark className="h-5 w-5" />}
             </Button>
-            <Button variant="ghost" size="icon" onClick={handlePromote} className="text-green-500 hover:text-green-400 hover:bg-green-950/50">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={handlePromote} 
+              className="text-green-500 hover:text-green-400 hover:bg-green-950/50"
+            >
               <ArrowUp className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon" className="text-gray-500 hover:text-gray-400 hover:bg-gray-800/50">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="text-gray-500 hover:text-gray-400 hover:bg-gray-800/50"
+              onClick={(e) => e.stopPropagation()}
+            >
               <MoreHorizontal className="h-5 w-5" />
             </Button>
           </div>
