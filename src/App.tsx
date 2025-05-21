@@ -15,6 +15,7 @@ import EmployeeDetailPage from "./pages/EmployeeDetailPage";
 import NotFound from "./pages/NotFound";
 import LoginPage from "./pages/LoginPage";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
+import UnauthorizedPage from "./pages/UnauthorizedPage";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
               <Sonner />
               <Routes>
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/unauthorized" element={<UnauthorizedPage />} />
                 <Route path="/" element={
                   <ProtectedRoute>
                     <Layout>
@@ -44,7 +46,7 @@ const App = () => (
                   </ProtectedRoute>
                 } />
                 <Route path="/analytics" element={
-                  <ProtectedRoute>
+                  <ProtectedRoute allowedRoles={["admin", "hr"]}>
                     <Layout>
                       <AnalyticsPage />
                     </Layout>
