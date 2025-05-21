@@ -8,8 +8,10 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
+
 export default function DashboardPage() {
   const { data: employees, isLoading, error } = useEmployees();
+  
   const { filters, setFilters, filteredEmployees, departments } = useFilteredEmployees(employees);
 
   if (error) {
