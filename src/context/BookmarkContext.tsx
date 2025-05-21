@@ -15,7 +15,7 @@ const BookmarkContext = createContext<BookmarkContextType | undefined>(undefined
 export const BookmarkProvider = ({ children }: { children: ReactNode }) => {
   const [bookmarkedEmployees, setBookmarkedEmployees] = useState<Employee[]>([]);
 
-  // Load bookmarks from localStorage on mount
+  // Load bookmarks from localStorage        on mount
   useEffect(() => {
     const savedBookmarks = localStorage.getItem("bookmarkedEmployees");
     if (savedBookmarks) {
@@ -27,7 +27,7 @@ export const BookmarkProvider = ({ children }: { children: ReactNode }) => {
     }
   }, []);
 
-  // Save bookmarks to localStorage whenever they change
+  // Save bookmarks to localStorage whenever th change
   useEffect(() => {
     localStorage.setItem("bookmarkedEmployees", JSON.stringify(bookmarkedEmployees));
   }, [bookmarkedEmployees]);
