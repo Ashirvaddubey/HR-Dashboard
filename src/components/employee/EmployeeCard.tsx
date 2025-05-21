@@ -20,7 +20,7 @@ export function EmployeeCard({ employee }: EmployeeCardProps) {
   const navigate = useNavigate();
 
   const handleBookmarkToggle = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent card click when bookmark button is clicked
+    e.stopPropagation(); // Prevent card click when bookmark button is clicked (hepful in bookmark functionality)
     if (bookmarked) {
       removeBookmark(employee.id);
     } else {
