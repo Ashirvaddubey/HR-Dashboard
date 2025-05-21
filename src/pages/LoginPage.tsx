@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
@@ -14,9 +13,11 @@ const LoginPage = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
 
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+
     
     try {
       const success = await login(username, password);
@@ -27,7 +28,6 @@ const LoginPage = () => {
       setIsLoading(false);
     }
   };
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
       <Card className="w-full max-w-md shadow-lg border-border/30">
