@@ -1,9 +1,9 @@
+// Pagination
 import * as React from "react"
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { ButtonProps, buttonVariants } from "@/components/ui/button"
-
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav
     role="navigation"
@@ -13,7 +13,6 @@ const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   />
 )
 Pagination.displayName = "Pagination"
-
 const PaginationContent = React.forwardRef<
   HTMLUListElement,
   React.ComponentProps<"ul">
@@ -25,7 +24,6 @@ const PaginationContent = React.forwardRef<
   />
 ))
 PaginationContent.displayName = "PaginationContent"
-
 const PaginationItem = React.forwardRef<
   HTMLLIElement,
   React.ComponentProps<"li">
@@ -58,7 +56,6 @@ const PaginationLink = ({
   />
 )
 PaginationLink.displayName = "PaginationLink"
-
 const PaginationPrevious = ({
   className,
   ...props
