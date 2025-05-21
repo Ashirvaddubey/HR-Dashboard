@@ -2,6 +2,13 @@
 
 A comprehensive Human Resource Management System built with React and TypeScript, featuring a modern UI and extensive employee management capabilities.
 
+## 🌐 Live Demo
+
+Check out the live application: [HR Dashboard](https://hr-dashboard-6q1cbjnsa-ashirvaddubeys-projects.vercel.app)
+
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black.svg?style=flat-square&logo=vercel)](https://hr-dashboard-6q1cbjnsa-ashirvaddubeys-projects.vercel.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-green.svg?style=flat-square&logo=github)](https://github.com/Ashirvaddubey/HR-Dashboard)
+
 ## 🚀 Features
 
 - **HR Management**
@@ -32,6 +39,7 @@ A comprehensive Human Resource Management System built with React and TypeScript
 - **State Management**: React Query for server state
 - **Build Tool**: Vite
 - **API Integration**: DummyJSON API
+- **Deployment**: Vercel
 - **Container Support**: Docker with Nginx
 
 ## 📋 Prerequisites
@@ -45,7 +53,7 @@ A comprehensive Human Resource Management System built with React and TypeScript
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/Ashirvaddubey/HR-Dashboard.git
 cd hr-dashboard
 ```
 
@@ -98,27 +106,10 @@ hr-dashboard/
 └── package.json        # Project dependencies
 ```
 
-## 🔧 Configuration
-
-### Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-VITE_API_BASE_URL=https://dummyjson.com
-```
-
-### Docker Configuration
-
-The project includes:
-- `Dockerfile` - Multi-stage build for production
-- `docker-compose.yml` - Development setup with hot-reload
-- `nginx.conf` - Nginx configuration for serving the application
-
-## 🌟 Features in Detail
+## 🌟 Key Features
 
 ### HR Management
-- **Employee Directory**: Grid layout with employee cards showing key information
+- **Employee Directory**: Grid layout with employee cards
 - **Employee Management**: 
   - Add/Edit employee information
   - Track employee performance
@@ -134,19 +125,14 @@ The project includes:
 - System preference detection
 - Persistent theme selection
 
-## 🔒 Security
-
-- CORS configuration
-- Security headers in Nginx
-- XSS protection
-- Content Security Policy
-- Role-based access control
-
 ## 🚀 Deployment
 
-### Vercel Deployment
+The application is deployed on Vercel and can be accessed at:
+[https://hr-dashboard-6q1cbjnsa-ashirvaddubeys-projects.vercel.app](https://hr-dashboard-6q1cbjnsa-ashirvaddubeys-projects.vercel.app)
 
-1. Install Vercel CLI globally:
+### Manual Deployment
+
+1. Install Vercel CLI:
 ```bash
 npm install -g vercel
 ```
@@ -156,45 +142,36 @@ npm install -g vercel
 vercel login
 ```
 
-3. Deploy to Vercel:
-```bash
-vercel
-```
-
-For production deployment:
+3. Deploy:
 ```bash
 vercel --prod
 ```
 
-The application will be automatically deployed and you'll receive a production URL.
+## 📈 Performance Optimizations
 
-#### Manual Deployment via Vercel Dashboard
+- React Query for efficient data fetching
+- Image optimization
+- Code splitting
+- Lazy loading of components
+- Nginx caching configuration
+- Gzip compression
 
-1. Push your code to a Git repository (GitHub, GitLab, or Bitbucket)
-2. Visit [Vercel Dashboard](https://vercel.com/dashboard)
-3. Click "New Project"
-4. Import your repository
-5. Select the repository
-6. Keep the default build settings:
-   - Framework Preset: Vite
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
-7. Click "Deploy"
+## 👥 Author
 
-Your application will be automatically built and deployed to Vercel's global network.
+Ashirvad Dubey
 
-### Environment Variables on Vercel
+## 📄 License
 
-To add environment variables:
-1. Go to your project on Vercel Dashboard
-2. Navigate to Settings > Environment Variables
-3. Add your environment variables:
-   ```
-   VITE_API_BASE_URL=https://dummyjson.com
-   ```
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-### Production Build
+---
 
-```bash
-npm run build
-```
+### 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+For any questions or issues, please open an issue in the repository.
