@@ -1,3 +1,4 @@
+// we can add number of emplyees like we will have add employee option (by HR)
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import {
